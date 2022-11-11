@@ -1,5 +1,6 @@
 import { Box,Flex,Image,Select,Button,Spacer,Heading,Text  } from '@chakra-ui/react';
-import { CheckCircleIcon } from '@chakra-ui/icons'
+import { CheckCircleIcon } from '@chakra-ui/icons';
+import {Link,Navigate} from "react-router-dom"
 
 
 export default function Workoutboxlast(){
@@ -24,7 +25,7 @@ export default function Workoutboxlast(){
               <CheckCircleIcon color="blue" /> <Text  as='samp' fontSize='18px'  >Audio and video instructions</Text>
               <br/>
               <br/>
-              <Button paddingLeft="35px" paddingRight="35px"  borderRadius="13px" variant='solid'  size='md' colorScheme='twitter'>JOIN NOW</Button>
+              <Button paddingLeft="35px" paddingRight="35px"  borderRadius="13px" variant='solid'  size='md' colorScheme='twitter'><Link to="/signup" >JOIN NOW</Link></Button>
             </Box>
             <Box  w="50%" h="550px"  >
               <Image   src="https://www.jefit.com/wp/wp-content/uploads/2022/08/web2-1536x1536.png" />

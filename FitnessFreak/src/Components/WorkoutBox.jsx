@@ -1,5 +1,6 @@
 import { Box,Flex,Image,Select,Button,Spacer,Heading,Text  } from '@chakra-ui/react';
-import { CheckCircleIcon } from '@chakra-ui/icons'
+import { CheckCircleIcon } from '@chakra-ui/icons';
+import {Link,Navigate} from "react-router-dom"
 
 
 export default function Workoutbox(props){
@@ -28,7 +29,7 @@ export default function Workoutbox(props){
               <CheckCircleIcon color="blue" /> <Text  as='samp' fontSize='18px'  >{fourthicon}</Text>
               <br/>
               <br/>
-              <Button paddingLeft="35px" paddingRight="35px"  borderRadius="13px" variant='solid'  size='md' colorScheme='twitter'>JOIN NOW</Button>
+              <Button paddingLeft="35px" paddingRight="35px"  borderRadius="13px" variant='solid'  size='md' colorScheme='twitter'><Link to="/signup" >JOIN NOW</Link></Button>
             </Box>
             </Flex>
           </Box>
