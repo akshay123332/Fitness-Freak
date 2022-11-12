@@ -5,6 +5,7 @@ import Workoutboxlast from "../Components/WorkoutBoxlast";
 import {Link} from "react-router-dom"
 import Freeplan from "../Components/Freeplan";
 import Eliteplan from "../Components/ElitePlan"
+import  Footer from "../Components/Footer"
 
 import { Box,Flex,Image,Select,Button,Spacer,Heading,Text,Stack } from '@chakra-ui/react'
 import { StarIcon,Icon } from '@chakra-ui/icons';
@@ -90,8 +91,8 @@ export default  function Homepage(){
              <Box  w="100%" h="150px" bgColor="#CBD5E0" paddingTop="60px"  >
              <Heading bg="BlackAlpha.100"  as='h3' size='xl'>PLANS THAT SUIT YOU BEST</Heading>
              </Box>
-             <Box  w="100%" h="850px" bgColor="#CBD5E0"  >
-              <Box w="75%" h="850px" bgColor="#CBD5E0"  margin="auto" >
+             <Box  w="100%" h="950px" bgColor="#CBD5E0"  >
+              <Box w="75%" h="850px" bgColor="#CBD5E0"  margin="auto"  >
                  <Flex justifyContent="space-between" >
                  <Freeplan/>
                  <Eliteplan   heading="Elite Monthly" firstpara="$12.99/month" 
@@ -111,11 +112,14 @@ export default  function Homepage(){
     tenthpara="Exercise tips from JEFIT"  elevenpara="experts"
     twelthpara="Premium workout plans"  thirteenpara="More..."  
      btnText="LEARN MORE" />
-                 
-                 
-                 </Flex>
+                  </Flex>
               </Box>
              </Box>
+            <Footer/>
+            <Box  w="100%" h="100px" bgColor="#E2E8F0"   >
+            <Text fontSize='sm'>Copyright © 2010 - 2022 Jefit, Inc.</Text>
+            <Text fontSize='sm'>All Rights Reserved.</Text>
+        </Box>
         </>
     )
 }
