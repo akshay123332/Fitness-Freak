@@ -115,6 +115,14 @@ export default  function Homepage(){
                   </Flex>
               </Box>
              </Box>
+             <Box w="100%" h="300px" bgColor="white">
+              <Box w="80%" h="300px" paddingTop="80px" bgColor="white" margin="auto" >
+              <Heading bg="BlackAlpha.100"  as='h3' size='xl'>WANT TO BUILD YOUR OWN WORKOUT PLAN?</Heading>
+              <Text bg="BlackAlpha.100"  marginTop="10px" fontSize='2xl'>Customize your workout plan with over 3000 free exercises in Jefit Workout Plan Builder. And easily share with friends.</Text>
+              <Button paddingLeft="55px"  paddingRight="55px" marginTop="10px"   borderRadius="13px"  
+ variant='solid'  size='md' colorScheme='twitter' >CREATE WORKOUT PLAN</Button>
+              </Box>
+             </Box>
             <Footer/>
             <Box  w="100%" h="100px" bgColor="#E2E8F0"   >
             <Text fontSize='sm'>Copyright © 2010 - 2022 Jefit, Inc.</Text>

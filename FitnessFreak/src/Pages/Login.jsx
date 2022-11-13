@@ -1,13 +1,23 @@
-import { Box,Flex,Image,Select,Button,Spacer,Heading,Text,Stack,Input, Checkbox } from '@chakra-ui/react'
+import { Box,Flex,Image,Select,Button,Spacer,Heading,
+    Text,Stack,Input, Checkbox,Alert,AlertIcon } from '@chakra-ui/react'
 import {NavLink} from "react-router-dom"
 import {useState} from "react";
-import {Navigate} from "react-router-dom"
+import {Navigate} from "react-router-dom";
+import { } from '@chakra-ui/icons'
+
+import {useContext} from "react";
+import {AppContext} from "../Context/AuthContext"
 
 export default  function Login(){
     const[email,setemail]=useState("");
     const[password,setpassword]=useState("");
-    const[token,settoken]=useState(null);
-    const[loading,setloading]=useState(false)
+    const[loading,setloading]=useState(false);
+    const[isError,setisError]=useState(false)
+    const {token,settoken,setisAuth,isAuth}=useContext(AppContext)
+  console.log(isAuth);
+
+
+
 
    async function HandleLogin(){
    try{
@@ -23,26 +33,46 @@ export default  function Login(){
        });
        let data= await res.json();
        console.log(data)
-       settoken(data.token)
+       if(data.token){
+        settoken(data.token)
+       setisAuth(true)
        setloading(false)
+       }else{
+        setloading(false)
+        setisAuth(false)
+        setisError(true)
+       }
+       
    }catch(err){
     console.log("err")
     setloading(false)
+    setisAuth(false)
+    setisError(true)
     alert(`Something Wrong`)
    }
    
-   if(token){
-    return <Navigate to="/" />
-     }else{
-      alert(`something Wrong`)
-     }
+}
+if(isAuth){
+  alert(`Login Succesfull`)
+  return<Navigate to="/" />
+  
+}
+if(isError){
+    return(
+        <>
+      <Alert status='error'>
+      <AlertIcon />
+       Error Invalid Credentials
+      </Alert>
+       </>
+    )
 }
   
 
 
  console.log(email,password)
     return(
-        <Box w="100%"  paddingTop="100px"  backgroundImage="https://t3.ftcdn.net/jpg/03/20/45/94/360_F_320459471_0PMbOAM3ahJJdUeMvbuvg3uDmsh2ye1o.jpg" h="800px" >
+        <Box w="100%"  paddingTop="100px"  backgroundImage="https://www.pixelstalk.net/wp-content/uploads/2016/06/Bodybuilding-Photos.jpg" h="800px" >
              <Heading bg="BlackAlpha.100"  as='h3' size='xl' color="white" paddingBottom="10px" >JEFIT</Heading>
         <Box w="40%"   paddingTop="100px"  bgColor="white"  h="600px" margin="auto" borderRadius="13px" >
       
@@ -83,7 +113,7 @@ export default  function Login(){
     <br/>
     <Flex margin="auto" w="50%"  >
         <Text>New to JEFIT?</Text>
-        <NavLink>Create an account.</NavLink>
+        <NavLink style={{color:"blue"}}  >Create an account.</NavLink>
     </Flex>
     </Box>
         </Box>

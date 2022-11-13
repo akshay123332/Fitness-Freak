@@ -6,7 +6,7 @@ import {Link,Navigate} from "react-router-dom"
 export default function Workoutbox(props){
     const{firsth,secondh,firsticon,secondicon,thirdicon,fourthicon,image}=props
     return(
-        <Box w="100%" h="650px" bgColor="white" paddingTop="100px"  >
+        <Box w="100%" h="650px" bgColor="white" paddingTop="50px"  >
           
           <Box w="75%" h="600px" bgColor="white"  margin="auto"  >
           <Flex justifyContent="space-between" >
