@@ -1,5 +1,5 @@
 import { Box,Flex,Image,Select,Button,Spacer,Heading,Text,Stack } from '@chakra-ui/react'
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import FooterComponent from "./FooterComponent"
 
 export default  function Footer(){
